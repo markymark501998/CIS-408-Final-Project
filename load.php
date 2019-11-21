@@ -24,7 +24,7 @@
         instructor_id VARCHAR(20),
         start_time INT NOT NULL,
         end_time INT NOT NULL,
-        offered_days VARCHAR(20),
+        offered_days INT NOT NULL,
         num_students INT NOT NULL,
         FOREIGN KEY (course_id) REFERENCES courses(course_id),
         FOREIGN KEY (instructor_id) REFERENCES instructors(instructor_id)
