@@ -17,6 +17,7 @@
     );";
     if ($con->query($createInstructor) !== TRUE) {
         die("Error creating Instructors table");
+        echo "Error creating Instructors table";
     }
     $createClass = "CREATE TABLE classes (
         class_id VARCHAR(20) PRIMARY KEY,
