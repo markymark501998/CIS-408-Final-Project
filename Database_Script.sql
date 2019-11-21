@@ -12,3 +12,7 @@ CREATE TABLE Test_Table (
 );
 
 Select * from Test_Table;
+
+DROP TABLE classes;
+DROP TABLE instructors;
+DROP TABLE courses;
