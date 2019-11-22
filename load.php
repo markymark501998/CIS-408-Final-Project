@@ -1,5 +1,6 @@
 <?php
     $con = mysqli_connect("localhost","admin","AdminPassword$19","School");
+    //$con = new mysqli('127.0.0.1', 'admin', 'AdminPassword$19', 'School');
     $createCourse = "CREATE TABLE courses (
         course_id VARCHAR(6) PRIMARY KEY,
     description VARCHAR(255) NOT NULL,
@@ -31,7 +32,7 @@
         start_time VARCHAR(20) NOT NULL,
         end_time VARCHAR(20) NOT NULL
     );";
-    if ($con->query($createDays) !== TRUE) {
+    if ($con->query($createBlocks) !== TRUE) {
         die("Error creating Days table");
     }
     $createClass = "CREATE TABLE classes (
