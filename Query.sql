@@ -1,24 +1,24 @@
 SELECT 
- 
-cl.course_id,
-ir.first_name,
-ir.last_name,
-co.description,
-bl.start_time,
-bl.end_time,
-dy.days_offered,
-co.semester,
-ir.department,
-co.availability,
-cl.num_students
+
+classes.course_id,
+instructors.first_name,
+instructors.last_name,
+courses.description,
+blocks.start_time,
+blocks.end_time,
+days.days_id,
+days.days_offered,
+courses.semester,
+instructors.department,
+courses.availability,
+classes.num_students
 
 FROM
-School.classes, School.classes AS cl, 
-School.courses, School.courses AS co,
-School.blocks, School.blocks AS bl,
-School.days, School.days AS dy,
-School.instructors, School.instructors AS ir
-WHERE cl.course_id = co.course_id 
-AND cl.block_id = bl.block_id
-AND cl.days_id = dy.days_id
-AND cl.instructor_id = ir.instructor_id
+classes
+LEFT OUTER JOIN courses ON classes.course_id = courses.course_id
+LEFT OUTER JOIN instructors ON classes.instructor_id = instructors.instructor_id
+LEFT OUTER JOIN blocks ON classes.block_id = blocks.block_id
+LEFT OUTER JOIN days ON classes.days_id = days.days_id
+
+WHERE courses.semester LIKE '%'
+AND days.days_id LIKE '%'

@@ -5,7 +5,12 @@ $( document ).ready(function() {
 });
 
 function Search() {    
-    var courseName = $('#courseName').val();
+    var courseId = $('#courseId').val();
+    var daysId = $('#daysId').val();
+    var instFname = $('#instFname').val();
+    var instLname = $('#instLname').val();
+    var semester = $('#semester').val();
+    var blockId = $('#blockId').val();
     
     document.getElementById("results").innerHTML = "";
 
@@ -18,5 +23,6 @@ function Search() {
     
     xmlhttp.open("POST", "query.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xmlhttp.send("courseName=" + courseName.toString() + "&lname=Ford");
+    xmlhttp.send("courseId=" + courseId.toString() + "&daysId=" + daysId.toString() + "&instFname=" + instFname.toString()
+    + "&instLname=" + instLname.toString() + "&semester=" + semester.toString() + "&blockId=" + blockId.toString());
 }
