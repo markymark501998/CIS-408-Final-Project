@@ -45,31 +45,41 @@
     $dataset = mysqli_query($con,$query);
 
     echo "
-    <table class=" + '"' + "table table-bordered table-hover" + '"' + ">
-        <thead class=" + '"' + "thead-light" + '"' + ">
-            <tr>
-                <th>Course Id</th>
-                <th>Teacher</th>
-                <th></th>
-                <th>Course Description</th>
-                <th></th>Start Time</th>
-                <th>End Time</th>
-                <th>Days Offered</th>
-                <th>Semester</th>
-                <th>Department</th>
-                <th>Availability</th>
-                <th># / Students</th>
-            </tr>
-        </thead>
+        <table class=\"table table-bordered table-hover\">
+        <thead class=\"table-success\">
+                <tr>
+                    <th>Course Id</th>
+                    <th>Teacher</th>
+                    <th>Course Description</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Days Offered</th>
+                    <th>Semester</th>
+                    <th>Department</th>
+                    <th>Availability</th>
+                    <th># / Students</th>
+                </tr>
+            </thead>
         <tbody>";
             
         while($row = mysqli_fetch_array($dataset)) {
-            //echo "Row".$row['course_id']." </br>";
-
             echo "<tr>";
-            echo "  <td>
-                        
-                    </td>";
+                echo "<td>".$row['course_id']."</td>";
+                echo "<td>".$row['first_name']." ".$row['last_name']."</td>";
+                echo "<td>".$row['description']."</td>";
+                echo "<td>".$row['start_time']."</td>";
+                echo "<td>".$row['end_time']."</td>";
+                echo "<td>".$row['days_offered']."</td>";
+                echo "<td>".$row['semester']."</td>";
+                echo "<td>".$row['department']."</td>";
+
+                if($row['availability'] == 1) {
+                    echo "<td>Yes</td>";
+                } else {
+                    echo "<td>No</td>";
+                }
+
+                echo "<td>".$row['num_students']."</td>";
             echo "</tr>";
         }
         
