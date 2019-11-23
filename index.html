@@ -32,19 +32,34 @@
                                     <td>
                                         <div class="form-group">
                                             <label for="courseId">Course Id</label>
-                                            <input type="text" class="form-control" id="courseId" aria-describedby="nameHelp" placeholder="" style="width:60%;">
+                                            <input type="text" class="form-control" id="courseId" style="width:60%;">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-group">
                                             <label for="blockId">Time Block</label>
-                                            <input type="text" class="form-control" id="blockId" aria-describedby="nameHelp" placeholder="" style="width:55%;">
+                                            <select class="form-control" id="blockId" style="width:65%;">
+                                                    <option selected>All</option>
+                                                    <option value="1">7:00 AM - 8:30 AM</option>
+                                                    <option value="2">8:45 AM - 10:15 AM</option>
+                                                    <option value="3">10:30 AM - 12:00 PM</option>
+                                                    <option value="4">1:30 PM - 3:00 PM</option>
+                                                    <option value="5">3:15 PM - 4:45 PM</option>
+                                                    <option value="6">5:00 PM - 6:30 PM</option>
+                                                    <option value="7">6:45 PM - 8:15 PM</option>
+                                                    <option value="8">8:30 PM - 10:00 PM</option>
+                                                    <option value="9">10:15 PM - 11:45 PM</option>
+                                                </select>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-group">
                                             <label for="semester">Semester</label>
-                                            <input type="text" class="form-control" id="semester" aria-describedby="nameHelp" placeholder="" style="width:65%;">
+                                            <select class="form-control" id="semester" style="width:65%;">
+                                                <option selected>All</option>
+                                                <option>Fall</option>
+                                                <option>Spring</option>
+                                            </select>
                                         </div>
                                     </td>
                                 </tr>
@@ -52,19 +67,26 @@
                                     <td>
                                         <div class="form-group">
                                             <label for="instFname">Teacher's First Name</label>
-                                            <input type="text" class="form-control" id="instFname" aria-describedby="nameHelp" placeholder="" style="width:90%;">
+                                            <input type="text" class="form-control" id="instFname" style="width:90%;">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-group">
                                             <label for="instLname">Teacher's Last Name</label>
-                                            <input type="text" class="form-control" id="instLname" aria-describedby="nameHelp" placeholder="" style="width:90%;">
+                                            <input type="text" class="form-control" id="instLname" style="width:90%;">
                                         </div>
                                     </td>
                                     <td>
                                         <div class="form-group">
                                             <label for="daysId">Days Offered</label>
-                                            <input type="text" class="form-control" id="daysId" aria-describedby="nameHelp" placeholder="" style="width:65%;">
+                                            <select class="form-control" id="daysId" style="width:65%;">
+                                                <option selected>All</option>
+                                                <option value="MW">Monday, Wednesday</option>
+                                                <option value="MWF">Monday, Wednesday, Friday</option>
+                                                <option value="TS">Tuesday, Saturday</option>
+                                                <option value="TTH">Tuesday, Thursday</option>
+                                                <option value="S">Saturday</option>
+                                            </select>
                                         </div>
                                     </td>
                                 </tr>

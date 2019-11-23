@@ -6,6 +6,14 @@
     $semester = $_POST['semester'];
     $blockId = intval($_POST['blockId']);
 
+    if($semester == "All") {
+        $semester = "";
+    }
+
+    if($daysId == "All") {
+        $daysId = "";
+    }
+
     $con = mysqli_connect("localhost","admin","AdminPassword$19","School");
 
     $query = "
@@ -44,7 +52,12 @@
 
     $dataset = mysqli_query($con,$query);
 
-    echo "
+    $row_count = mysqli_num_rows($dataset);
+
+    if($row_count == 0) {
+        echo "<h5 class=\"text-danger\">No classes matched these search parameters. Please try again!</h6>";
+    } else {
+        echo "
         <table class=\"table table-bordered table-hover\">
         <thead class=\"table-success\">
                 <tr>
@@ -85,5 +98,6 @@
         
         echo "
         </tbody>
-    </table>"; 
+        </table>"; 
+    }
 ?>
